@@ -23,6 +23,10 @@ urlpatterns = [
     path('about/',views.about),
     path('listpic/',views.listpic),
     path('newslistpic/',views.newslistpic),
+    re_path('newslistpic/(?P<page>\d+)',views.newslistpic),
     path('base/',views.base),
-    path('app/',include('bokeapp.urls'))
+    path('app/',include('bokeapp.urls')),
+    re_path('articlecontext/(?P<id>\d+)',views.articlecontext),
+    path('adddata/',views.adddata),
+    path('ckeditor/',include('ckeditor_uploader.urls'))
 ]

@@ -25,7 +25,7 @@ SECRET_KEY = 'cgoizevrf5t+#6ifdh2i&z8_jqv-as8tq8g7v7lba3_kx!o&x3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bokeapp',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -134,3 +136,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS=(
     os.path.join(BASE_DIR,'static'),
 )
+MEDIA_URL='/media/'
+MEDIA_ROOT=os.path.join(BASE_DIR,'static')
+CKEDITOR_UPLOAD_PATH='static/upload'
+CKEDITOR_IMAGE_BACKEND='pillow'
+
